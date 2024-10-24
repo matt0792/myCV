@@ -1,0 +1,373 @@
+// General styling
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-family: "Workbench";
+  position: relative;
+}
+
+// General background styling
+.background {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Pseudo element to contain spinning background, without rotating content
+.background::before {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 500vw;
+  height: 500vh;
+  background: var(--gradient);
+  animation: rotateGradient 10s linear infinite;
+}
+
+// Keyframes for rotation
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(230deg);
+  }
+  70% {
+    transform: rotate(100deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+  --main-color: rgb(78, 78, 78);
+}
+
+// Index container div 
+.index-container {
+  height: 100vh;
+}
+
+// General class to hide cursor
+.hidden-cursor {
+  cursor: none;
+}
+
+// Main circle styling
+.center-circle {
+  width: 250px;
+  height: 250px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: box-shadow 0.5s;
+  user-select: none;
+  margin: auto;
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke,
+    -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke;
+}
+
+// Center circle hover blur effect
+.center-circle:hover {
+  box-shadow: 0px 15px 20px whitesmoke, 15px 0px 20px whitesmoke,
+    -15px 0px 20px whitesmoke, 0px -15px 20px whitesmoke;
+}
+
+// Smaller circle styling
+.small-circle {
+  width: 130px;
+  height: 130px;
+  background-color: whitesmoke;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.1s ease-out, scale 0.1s ease-out,
+    box-shadow 0.5s ease;
+}
+
+// Cycle icon
+.bi-arrow-repeat {
+  font-size: 30px;
+}
+
+// Button to cycle background gradient
+.change-theme {
+  width: 45px !important;
+  height: 45px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+// Position of small circles before open animation
+#aboutCircle {
+  transform: translate(0, 0);
+}
+
+#portfolioCircle {
+  transform: translate(0, 0);
+}
+
+#experienceCircle {
+  transform: translate(0, 0);
+}
+
+// Links inside small circles
+.small-circle a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+// Shadow on main circle when active
+.center-circle.active {
+  box-shadow: 0px 3px 8px whitesmoke, 3px 0px 8px whitesmoke,
+    -3px 0px 8px whitesmoke;
+}
+
+// Position for circles when active
+.center-circle.active #aboutCircle {
+  opacity: 1;
+  transform: translate(-250px, 0px);
+  box-shadow: 11px 0px 10px whitesmoke, -3px 0px 3px whitesmoke;
+}
+.center-circle.active #portfolioCircle {
+  opacity: 1;
+  transform: translate(250px, 0);
+  box-shadow: -11px 0px 10px whitesmoke, 3px 0px 3px whitesmoke;
+}
+.center-circle.active #experienceCircle {
+  opacity: 1;
+  transform: translate(0px, 250px);
+  box-shadow: 0px -11px 10px whitesmoke, 0px 3px 3px whitesmoke;
+}
+
+.small-circle:hover {
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke,
+    -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke !important;
+}
+
+// Styling for arrow
+.arrow {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  font-size: 55px;
+  color: whitesmoke;
+}
+
+// Style for main heading
+.main-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  user-select: none;
+}
+
+// Index heading style
+.index-heading {
+  padding-top: 12vh;
+}
+
+// Style for about page
+.generic-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Styling for general circle buttons
+.button-circle {
+  background-color: whitesmoke;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #ffc107;
+  cursor: pointer;
+  text-decoration: none;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  transition: box-shadow 0.5s ease;
+}
+
+// Hover effect 
+.button-circle:hover {
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke,
+    -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke;
+}
+
+// Clear default formatting for links 
+.link {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+// General text styling
+.text-container {
+  width: 60vw;
+  text-align: center;
+}
+
+// Icon styling
+.icon-link {
+  color: whitesmoke;
+  font-size: 23px;
+  transition: transform 0.01s ease-out;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-top: 20px;
+  user-select: none;
+}
+
+.link-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+}
+
+.about-links {
+  margin-top: 70px;
+}
+
+// Styling for relative positioned buttons
+.button-circle-rel {
+  background-color: whitesmoke;
+  height: 120px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--main-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.button-circle-rel:hover {
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke,
+    -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke;
+}
+
+// Image styling
+.about-profile {
+  height: auto;
+  width: 200px;
+  border-radius: 50%;
+}
+
+// Album section styling
+.albums {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 80px;
+  margin-top: 7vh;
+}
+
+.album-image {
+  height: auto;
+  width: 150px;
+  border-radius: 50%;
+  transition: all 0.7s ease;
+}
+
+.album-image.active {
+  transform: scale(1.4);
+  border-radius: 7px;
+}
+
+.album-image:hover {
+  transform: scale(1.4);
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    margin-top: 70px;
+  }
+
+// General class to hide items
+.hidden {
+  display: none;
+}
+
+.spacer {
+  height: 110px;
+}
+
+// Styling for experience page
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+.table-container {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  background-color: transparent !important;
+  color: whitesmoke;
+}
+
+.table th,
+.table td {
+  background-color: transparent !important;
+  border: 2px solid white;
+  color: whitesmoke;
+}

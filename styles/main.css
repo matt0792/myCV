@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-family: "Workbench";
+  position: relative;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 500vw;
+  height: 500vh;
+  background: var(--gradient);
+  animation: rotateGradient 10s linear infinite;
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(230deg);
+  }
+  70% {
+    transform: rotate(100deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+:root {
+  --main-color: rgb(78, 78, 78);
+}
+
+.index-container {
+  height: 100vh;
+}
+
+.hidden-cursor {
+  cursor: none;
+}
+
+.center-circle {
+  width: 250px;
+  height: 250px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: box-shadow 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin: auto;
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke, -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke;
+}
+
+.center-circle:hover {
+  box-shadow: 0px 15px 20px whitesmoke, 15px 0px 20px whitesmoke, -15px 0px 20px whitesmoke, 0px -15px 20px whitesmoke;
+}
+
+.small-circle {
+  width: 130px;
+  height: 130px;
+  background-color: whitesmoke;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.1s ease-out, scale 0.1s ease-out, box-shadow 0.5s ease;
+}
+
+.bi-arrow-repeat {
+  font-size: 30px;
+}
+
+.change-theme {
+  width: 45px !important;
+  height: 45px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#aboutCircle {
+  transform: translate(0, 0);
+}
+
+#portfolioCircle {
+  transform: translate(0, 0);
+}
+
+#experienceCircle {
+  transform: translate(0, 0);
+}
+
+.small-circle a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.center-circle.active {
+  box-shadow: 0px 3px 8px whitesmoke, 3px 0px 8px whitesmoke, -3px 0px 8px whitesmoke;
+}
+
+.center-circle.active #aboutCircle {
+  opacity: 1;
+  transform: translate(-250px, 0px);
+  box-shadow: 11px 0px 10px whitesmoke, -3px 0px 3px whitesmoke;
+}
+
+.center-circle.active #portfolioCircle {
+  opacity: 1;
+  transform: translate(250px, 0);
+  box-shadow: -11px 0px 10px whitesmoke, 3px 0px 3px whitesmoke;
+}
+
+.center-circle.active #experienceCircle {
+  opacity: 1;
+  transform: translate(0px, 250px);
+  box-shadow: 0px -11px 10px whitesmoke, 0px 3px 3px whitesmoke;
+}
+
+.small-circle:hover {
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke, -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke !important;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  font-size: 55px;
+  color: whitesmoke;
+}
+
+.main-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.index-heading {
+  padding-top: 12vh;
+}
+
+.generic-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-circle {
+  background-color: whitesmoke;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #ffc107;
+  cursor: pointer;
+  text-decoration: none;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  transition: box-shadow 0.5s ease;
+}
+
+.button-circle:hover {
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke, -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke;
+}
+
+.link {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.text-container {
+  width: 60vw;
+  text-align: center;
+}
+
+.icon-link {
+  color: whitesmoke;
+  font-size: 23px;
+  transition: transform 0.01s ease-out;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-top: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.link-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+}
+
+.about-links {
+  margin-top: 70px;
+}
+
+.button-circle-rel {
+  background-color: whitesmoke;
+  height: 120px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--main-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.button-circle-rel:hover {
+  box-shadow: 0px 7px 10px whitesmoke, 7px 0px 10px whitesmoke, -7px 0px 10px whitesmoke, 0px -7px 10px whitesmoke;
+}
+
+.about-profile {
+  height: auto;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.albums {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 80px;
+  margin-top: 7vh;
+}
+
+.album-image {
+  height: auto;
+  width: 150px;
+  border-radius: 50%;
+  transition: all 0.7s ease;
+}
+
+.album-image.active {
+  transform: scale(1.4);
+  border-radius: 7px;
+}
+
+.album-image:hover {
+  transform: scale(1.4);
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  margin-top: 70px;
+}
+
+.hidden {
+  display: none;
+}
+
+.spacer {
+  height: 110px;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+.table-container {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  background-color: transparent !important;
+  color: whitesmoke;
+}
+
+.table th,
+.table td {
+  background-color: transparent !important;
+  border: 2px solid white;
+  color: whitesmoke;
+}/*# sourceMappingURL=main.css.map */
