@@ -4,6 +4,14 @@ let smallCircle = document.querySelectorAll(".small-circle")
 let arrow = document.getElementById("arrow");
 let backgroundElement = document.querySelector(".background");
 let themeCycle = document.getElementById("themeCycle")
+let swell = document.getElementById("swell")
+let click = document.getElementById("click")
+
+// Function to play audio
+function playSwell() {
+  swell.play()
+}
+
 // Easy way to scale effect
 let movementStrength = 30;
 let weight = 0.9;
@@ -48,6 +56,7 @@ function setTheme() {
 document.getElementById("mainCircle").addEventListener("click", function () {
   this.classList.toggle("active");
   if (centerCircle.classList.contains("active")) {
+    playSwell()
     indexContainer.classList.remove("hidden-cursor");
     arrow.classList.add("hidden");
     themeCycle.classList.remove("hidden")
@@ -102,4 +111,18 @@ document.addEventListener("mousemove", function (e) {
 
   // Rotate arrow towards circel
   arrow.style.transform = `rotate(${angle}deg)`;
+});
+
+function clickPlay() {
+  click.play()
+}
+
+// Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+  let smallLink = document.querySelectorAll(".small-link");
+
+  smallLink.forEach(function (smallLink) {
+    // Add event listener for mouseover (hover)
+    smallLink.addEventListener("mouseover", clickPlay);
+  });
 });
