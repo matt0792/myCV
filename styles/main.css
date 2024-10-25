@@ -8,7 +8,6 @@ body {
   align-items: center;
   background-color: #f0f0f0;
   font-family: "Workbench";
-  position: relative;
 }
 
 .background {
@@ -308,7 +307,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .spacer {
@@ -341,4 +340,45 @@ body {
   background-color: transparent !important;
   border: 2px solid white;
   color: whitesmoke;
+}
+
+.mobile-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.desktop-screen {
+  border: 3px whitesmoke solid;
+  padding: 15px;
+  color: whitesmoke;
+  width: 300px;
+  height: 160px;
+  border-radius: 7px;
+}
+
+.desktop-ui {
+  display: flex;
+}
+
+.desktop-dots {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.search-bar {
+  border: 2px whitesmoke solid;
+  width: 210px;
+  margin-left: 20px;
+  border-radius: 4px;
+}
+
+.ui-divider {
+  border: 1px whitesmoke solid;
+  margin-top: 13px;
+  margin-bottom: 25px;
 }/*# sourceMappingURL=main.css.map */

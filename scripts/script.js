@@ -6,6 +6,17 @@ let backgroundElement = document.querySelector(".background");
 let themeCycle = document.getElementById("themeCycle")
 let swell = document.getElementById("swell")
 let click = document.getElementById("click")
+let mobilePlaceholder = document.getElementById("mobilePlaceholder")
+let indexContainer = document.getElementById("indexContainer")
+
+function isMobile() {
+  return window.innerWidth <= 800;
+}
+
+if (isMobile()) {
+  mobilePlaceholder.classList.remove("hidden")
+  indexContainer.classList.add("hidden")
+}
 
 // Function to play audio
 function playSwell() {

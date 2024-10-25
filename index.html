@@ -35,9 +35,21 @@
     <audio id="swell" src="audio/swell.mp3"></audio>
     <audio id="click" src="audio/click.mp3"></audio>
     <div class="background" id="background"></div>
+    <div class="mobile-placeholder hidden" id="mobilePlaceholder">
+      <div class="desktop-screen">
+        <div class="desktop-ui">
+          <div class="desktop-dots"><i class="bi bi-three-dots"></i></div>
+          <div class="search-bar"></div>
+        </div>
+        <div class="ui-divider"></div>
+        <div class="desktop-message">
+          This page is intended to be viewed on desktop.
+        </div>
+      </div>
+    </div>
     <div class="index-container hidden-cursor" id="indexContainer">
       <div class="main-heading index-heading">
-        <h1 onclick="newGradient()">Matt Thompson</h1>
+        <h1>Matt Thompson</h1>
         <p>web dev // audio engineer</p>
       </div>
       <div class="spacer"></div>
@@ -58,7 +70,11 @@
         </div>
       </div>
     </div>
-    <div class="button-circle change-theme hidden" id="themeCycle" onClick="newGradient()">
+    <div
+      class="button-circle change-theme hidden"
+      id="themeCycle"
+      onClick="newGradient()"
+    >
       <div class="mb-3">
         <i class="bi bi-arrow-repeat link"></i>
       </div>
