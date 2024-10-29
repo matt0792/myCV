@@ -32,11 +32,6 @@
     <link rel="stylesheet" href="../styles/main.css" type="text/css" />
   </head>
   <body>
-    <audio id="click" src="../audio/click.mp3"></audio>
-    <audio id="kick" src="../audio/kick.mp3"></audio>
-    <audio id="hat" src="../audio/hat.mp3"></audio>
-    <audio id="snare" src="../audio/snare.mp3"></audio>
-    <audio id="fx" src="../audio/fx.mp3"></audio>
     <div class="background hiddenCursor" id="background"></div>
     <div class="generic-container">
       <div class="button-circle">
@@ -51,9 +46,9 @@
         <div class="sequencer mt-5" id="sequencer">
           <div class="step-container">
             <div class="tempo-controls">
-                <div class="tempoPlus tempo-button" onclick="increaseTempo()">
-                    <i class="bi bi-plus-lg"></i>
-                  </div>
+              <div class="tempoPlus tempo-button" onclick="increaseTempo()">
+                <i class="bi bi-plus-lg"></i>
+              </div>
               <div class="tempoMinus tempo-button" onClick="tempoMinus()">
                 <i class="bi bi-dash-lg"></i>
               </div>
@@ -151,6 +146,11 @@
         </div>
       </div>
     </div>
+    <audio id="click" src="../audio/click.mp3"></audio>
+    <audio id="kick" src="../audio/kick.mp3"></audio>
+    <audio id="hat" src="../audio/hat.mp3"></audio>
+    <audio id="snare" src="../audio/snare.mp3"></audio>
+    <audio id="fx" src="../audio/fx.mp3"></audio>
 
     <!-- Scripts -->
     <script
