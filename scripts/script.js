@@ -128,12 +128,22 @@ function clickPlay() {
   click.play()
 }
 
-// Wait for the DOM to load
+// Add event listeners for mouseover
+// For click sfx
 document.addEventListener("DOMContentLoaded", function () {
   let smallLink = document.querySelectorAll(".small-link");
 
   smallLink.forEach(function (smallLink) {
-    // Add event listener for mouseover (hover)
     smallLink.addEventListener("mouseover", clickPlay);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  let channelButton = document.querySelectorAll(".channel-button");
+
+  channelButton.forEach(function (channelButton) {
+    console.log(channelButton)
+    channelButton.addEventListener("mouseover", clickPlay);
+    channelButton.classList.add("active")
   });
 });

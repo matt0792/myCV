@@ -381,4 +381,110 @@ body {
   border: 1px whitesmoke solid;
   margin-top: 13px;
   margin-bottom: 25px;
+}
+
+.sequencer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.seq-spacer {
+  border: 1px whitesmoke solid;
+}
+
+.step-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100px !important;
+}
+
+.step-indicator {
+  border: 2px whitesmoke solid;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  transform-origin: 5px !important;
+}
+
+.channel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.channel-button {
+  border: 2px whitesmoke solid;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  transition: transform 0.5s ease, box-shadow 0.07s ease;
+}
+
+.channel-button:hover {
+  box-shadow: 0px 6px 12px whitesmoke, 6px 0px 12px whitesmoke, -6px 0px 12px whitesmoke, 0px -6px 12px whitesmoke;
+}
+
+.channel-button.active {
+  box-shadow: 0px 3px 8px whitesmoke, 3px 0px 8px whitesmoke, -3px 0px 8px whitesmoke;
+  background-color: whitesmoke;
+  transform: scale(1.2);
+}
+
+.step-indicator {
+  transition: transform 0.5s ease, box-shadow 0.03s ease;
+}
+
+.step-indicator.active {
+  box-shadow: 0px 3px 8px whitesmoke, 3px 0px 8px whitesmoke, -3px 0px 8px whitesmoke;
+  background-color: whitesmoke;
+}
+
+.tempo-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tempo-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tempo-button {
+  border: 2px whitesmoke solid;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  transition: transform 0.5s ease, box-shadow 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: gray;
+}
+
+.tempo-button:hover {
+  box-shadow: 0px 3px 4px whitesmoke, 3px 0px 4px whitesmoke, -3px 0px 4px whitesmoke, 0px -3px 4px whitesmoke;
+}
+
+.tempoPlus {
+  box-shadow: 0px 3px 4px whitesmoke;
+}
+
+.tempoMinus {
+  box-shadow: 0px -3px 4px whitesmoke;
+}
+
+.step-container {
+  position: relative;
+  width: 300px; /* Adjust the size as needed */
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */
