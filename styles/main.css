@@ -420,7 +420,7 @@ body {
   border: 2px whitesmoke solid;
   border-radius: 50%;
   height: 40px;
-  width: 40px;
+  min-width: 40px;
   transition: transform 0.5s ease, box-shadow 0.07s ease;
 }
 
@@ -435,11 +435,11 @@ body {
 }
 
 .step-indicator {
-  transition: transform 0.5s ease, box-shadow 0.03s ease;
+  transition: transform 1s ease, box-shadow 0.3s ease;
 }
 
 .step-indicator.active {
-  box-shadow: 0px 3px 8px whitesmoke, 3px 0px 8px whitesmoke, -3px 0px 8px whitesmoke;
+  box-shadow: 0px 3px 4px whitesmoke, 0px 10px 8px whitesmoke, 0px 20px 16px whitesmoke, 0px -3px 4px whitesmoke, 3px 0px 8px whitesmoke, -3px 0px 8px whitesmoke;
   background-color: whitesmoke;
 }
 
@@ -474,17 +474,62 @@ body {
 }
 
 .tempoPlus {
-  box-shadow: 0px 3px 4px whitesmoke;
+  box-shadow: -4px 0px 4px whitesmoke;
 }
 
 .tempoMinus {
-  box-shadow: 0px -3px 4px whitesmoke;
+  box-shadow: 4px 0px 4px whitesmoke;
 }
 
 .step-container {
   position: relative;
-  width: 300px; /* Adjust the size as needed */
+  min-width: 150px;
   height: 300px;
-  margin: 0 auto;
   border-radius: 50%;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chord-container {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+}
+
+.chord-button {
+  transition: box-shadow 0.15s ease !important;
+}
+
+.chord-inner {
+  font-size: 50px;
+  color: gray;
+  box-shadow: 10px 0px 8px whitesmoke, -10px 0px 8px whitesmoke, 20px 0px 20px whitesmoke, -20px 0px 20px whitesmoke;
+}
+
+.chord-left {
+  font-size: 50px;
+  color: gray;
+  box-shadow: 10px 0px 8px whitesmoke, 20px 0px 20px whitesmoke;
+}
+
+.chord-right {
+  font-size: 50px;
+  color: gray;
+  box-shadow: -10px 0px 8px whitesmoke, -20px 0px 20px whitesmoke;
+}
+
+.chord-gen-switch {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  color: whitesmoke;
+}
+
+.form-check-input:checked {
+  background-color: hotpink;
+  border-color: gray;
 }/*# sourceMappingURL=main.css.map */
